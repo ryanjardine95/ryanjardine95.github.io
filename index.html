@@ -51,26 +51,6 @@
       color: #d1d1d1;
     }
 
-    /* Vision Section */
-    .vision {
-      text-align: center;
-      background: linear-gradient(135deg, #00ffcc 10%, #0066ff 90%);
-      color: #000;
-      padding: 3rem;
-      border-radius: 15px;
-      margin: 3rem auto;
-      max-width: 900px;
-      box-shadow: 0 5px 15px rgba(0, 255, 204, 0.4);
-    }
-    .vision h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .vision p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-    }
-
     /* Projects Section */
     .projects {
       padding: 3rem 2rem;
@@ -78,24 +58,9 @@
       overflow: hidden;
       background: radial-gradient(circle, #121212 10%, #000 80%);
     }
-    .vortex {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(circle, rgba(0, 255, 204, 0.1), transparent);
-      border-radius: 50%;
-      animation: spin 20s linear infinite;
-      z-index: 0;
-    }
-    @keyframes spin {
-      0% { transform: translate(-50%, -50%) rotate(0deg); }
-      100% { transform: translate(-50%, -50%) rotate(360deg); }
-    }
+
+    /* Individual Project Card Styles */
     .project-card {
-      background: rgba(18, 18, 18, 0.9);
       border: 1px solid #333;
       border-radius: 10px;
       padding: 1.5rem;
@@ -109,12 +74,34 @@
       box-shadow: 0 5px 15px rgba(0, 255, 204, 0.2);
     }
     .project-title {
-      color: #00ffcc;
       font-size: 1.5rem;
     }
     .project-desc {
-      color: #d1d1d1;
       font-size: 1rem;
+    }
+
+    /* Color Schemes for Projects */
+    .ethos-metrics {
+      background: #002b36; /* Dark teal */
+      color: #2aa198; /* Light teal */
+    }
+    .evolve {
+      background: #1b1b36; /* Deep purple */
+      color: #9d4edd; /* Light purple */
+    }
+    .irish-ed {
+      background: #20202a; /* Dark gray */
+      color: #ff9500; /* Bright orange */
+    }
+    .mission-deck {
+      background: #252525; /* Charcoal */
+      color: #1db954; /* Spotify green */
+    }
+
+    .project-icon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
     }
 
     /* Footer Section */
@@ -136,66 +123,55 @@
     <p>Empowering the future through innovative apps that make a real difference in people's lives.</p>
   </div>
 
-  <!-- Vision Section -->
-  <div class="vision">
-    <h2>Our Vision</h2>
-    <p>
-      At Bloom AI, we believe in creating technology that not only solves problems but empowers people. From fostering
-      sustainability through better corporate governance to helping individuals achieve their personal and professional
-      goals, our mission is to make the world better. By leveraging cutting-edge AI, we aim to build tools that inspire growth, 
-      drive positive change, and enable people everywhere to thrive.
-    </p>
-    <p>
-      Together, we’re redefining what’s possible and using innovation as a force for good.
-    </p>
-  </div>
-
   <!-- Projects Section -->
   <div class="projects container">
-    <div class="vortex"></div>
     <h2 class="text-center mb-5" style="color: #00ffcc;">Our Projects</h2>
     <div class="row row-cols-1 row-cols-md-2 g-4">
       <!-- Ethos Metrics -->
       <div class="col">
-        <div class="project-card">
+        <div class="project-card ethos-metrics">
+          <img src="ethos-icon.png" alt="Ethos Metrics Icon" class="project-icon">
           <h3 class="project-title">Ethos Metrics</h3>
           <p class="project-desc">
             A compliance platform for sustainability reporting. Helping businesses meet ESG and climate-related goals with ease.
           </p>
-          <a href="https://green-gauge.web.app/" class="btn btn-outline-info mt-3" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Ethos Metrics">Learn More</a>
+          <a href="https://green-gauge.web.app/" class="btn btn-outline-light mt-3" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Ethos Metrics">Learn More</a>
         </div>
       </div>
-      
+
       <!-- Evolve -->
       <div class="col">
-        <div class="project-card">
+        <div class="project-card evolve">
+          <img src="evolve-icon.png" alt="Evolve Icon" class="project-icon">
           <h3 class="project-title">Evolve</h3>
           <p class="project-desc">
             A motivation app powered by AI to help users set and achieve their goals, combining research-backed strategies with personalization.
           </p>
-          <a href="https://evolve-c6cfa.web.app/" class="btn btn-outline-info mt-3" target="_blank" aria-label="Try Evolve now">Try it now!</a>
+          <a href="https://evolve-c6cfa.web.app/" class="btn btn-outline-light mt-3" target="_blank" aria-label="Try Evolve now">Try it now!</a>
         </div>
       </div>
-      
+
       <!-- Irish ED Waiting Times -->
       <div class="col">
-        <div class="project-card">
+        <div class="project-card irish-ed">
+          <img src="irish-ed-icon.png" alt="Irish ED Icon" class="project-icon">
           <h3 class="project-title">Irish Emergency Department Waiting Times</h3>
           <p class="project-desc">
             A mobile and web-based app to help users pre-register for emergency department visits and view current waiting times.
           </p>
-          <a href="https://irish-ed-wait-times.web.app/" class="btn btn-outline-info mt-3" target="_blank" aria-label="Try Irish ED Waiting Times now">Try it now!</a>
+          <a href="https://irish-ed-wait-times.web.app/" class="btn btn-outline-light mt-3" target="_blank" aria-label="Try Irish ED Waiting Times now">Try it now!</a>
         </div>
       </div>
-      
+
       <!-- Mission Deck -->
       <div class="col">
-        <div class="project-card">
+        <div class="project-card mission-deck">
+          <img src="mission-deck-icon.png" alt="Mission Deck Icon" class="project-icon">
           <h3 class="project-title">Mission Deck</h3>
           <p class="project-desc">
             A platform to help users strategize and accomplish complex goals and missions.
           </p>
-          <a href="https://mission-deck.web.app/" class="btn btn-outline-info mt-3" target="_blank" aria-label="Learn more about Mission Deck">Learn More</a>
+          <a href="https://mission-deck.web.app/" class="btn btn-outline-light mt-3" target="_blank" aria-label="Learn more about Mission Deck">Learn More</a>
         </div>
       </div>
     </div>
