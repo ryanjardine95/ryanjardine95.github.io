@@ -51,17 +51,58 @@
       color: #d1d1d1;
     }
 
+    /* Vision Section */
+    .vision {
+      text-align: center;
+      background: linear-gradient(135deg, #00ffcc 10%, #0066ff 90%);
+      color: #000;
+      padding: 3rem;
+      border-radius: 15px;
+      margin: 3rem auto;
+      max-width: 900px;
+      box-shadow: 0 5px 15px rgba(0, 255, 204, 0.4);
+    }
+    .vision h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .vision p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
     /* Projects Section */
     .projects {
       padding: 3rem 2rem;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle, #121212 10%, #000 80%);
+    }
+    .vortex {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(0, 255, 204, 0.1), transparent);
+      border-radius: 50%;
+      animation: spin 20s linear infinite;
+      z-index: 0;
+    }
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
     }
     .project-card {
-      background: #121212;
+      background: rgba(18, 18, 18, 0.9);
       border: 1px solid #333;
       border-radius: 10px;
       padding: 1.5rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
     .project-card:hover {
       transform: translateY(-5px);
@@ -95,16 +136,23 @@
     <p>Empowering the future through innovative apps that make a real difference in people's lives.</p>
   </div>
 
-  <!-- About Section -->
-  <div class="container text-center my-5">
-    <h2 class="mb-4" style="color: #00ffcc;">Our Vision</h2>
-    <p style="color: #d1d1d1;">
-      At Bloom AI, we aim to create groundbreaking software that inspires growth, fosters learning, and empowers individuals and businesses to achieve more. From environmental sustainability to healthcare innovation, our projects are designed to solve real-world challenges with purpose and impact.
+  <!-- Vision Section -->
+  <div class="vision">
+    <h2>Our Vision</h2>
+    <p>
+      At Bloom AI, we believe in creating technology that not only solves problems but empowers people. From fostering
+      sustainability through better corporate governance to helping individuals achieve their personal and professional
+      goals, our mission is to make the world better. By leveraging cutting-edge AI, we aim to build tools that inspire growth, 
+      drive positive change, and enable people everywhere to thrive.
+    </p>
+    <p>
+      Together, we’re redefining what’s possible and using innovation as a force for good.
     </p>
   </div>
 
   <!-- Projects Section -->
   <div class="projects container">
+    <div class="vortex"></div>
     <h2 class="text-center mb-5" style="color: #00ffcc;">Our Projects</h2>
     <div class="row row-cols-1 row-cols-md-2 g-4">
       <!-- Ethos Metrics -->
