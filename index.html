@@ -12,6 +12,7 @@
       background-color: #000;
       color: #fff;
       font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
     }
     a {
       color: #00ffcc;
@@ -51,12 +52,48 @@
       color: #d1d1d1;
     }
 
+    /* Mission Section */
+    .mission {
+      text-align: center;
+      background: linear-gradient(135deg, #00ffcc 10%, #0066ff 90%);
+      color: #000;
+      padding: 3rem;
+      border-radius: 15px;
+      margin: 3rem auto;
+      max-width: 900px;
+      box-shadow: 0 5px 15px rgba(0, 255, 204, 0.4);
+    }
+    .mission h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .mission p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
     /* Projects Section */
     .projects {
       padding: 3rem 2rem;
       position: relative;
-      overflow: hidden;
       background: radial-gradient(circle, #121212 10%, #000 80%);
+    }
+
+    /* Vortex Effect */
+    .vortex {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 255, 204, 0.2), transparent);
+      border-radius: 50%;
+      animation: spin 15s linear infinite;
+      transform: translate(-50%, -50%);
+    }
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
     }
 
     /* Floating Effect for Cards */
@@ -71,12 +108,14 @@
       min-height: 300px;
       box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5), 0px 5px 15px rgba(255, 255, 255, 0.1);
       transform: translateY(0);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-size 0.3s ease;
       position: relative;
+      z-index: 1;
     }
     .project-card:hover {
       transform: translateY(-10px);
       box-shadow: 0px 20px 30px rgba(0, 255, 204, 0.3), 0px 10px 20px rgba(255, 255, 255, 0.2);
+      background-size: 110%;
     }
 
     /* Specific Backgrounds for Each Project */
@@ -112,8 +151,27 @@
     <p>Empowering the future through innovative apps that make a real difference in people's lives.</p>
   </div>
 
+  <!-- Mission Section -->
+  <div class="mission">
+    <h2>Our Mission</h2>
+    <p>
+      At Bloom AI, we believe in using technology as a force for good. From helping individuals set and achieve their goals
+      with apps like <b>Evolve</b>, to revolutionizing hospital wait times with <b>Irish Emergency Department Waiting Times</b>, our mission
+      is to solve real-world problems with impactful and accessible solutions.
+    </p>
+    <p>
+      We’re committed to empowering individuals, fostering sustainability, and driving innovation in healthcare, education,
+      and beyond. Our projects aim to help businesses meet ESG goals, inspire personal growth, and create meaningful
+      improvements in people’s lives.
+    </p>
+    <p>
+      With every line of code, we strive to build a better, brighter future—one app at a time.
+    </p>
+  </div>
+
   <!-- Projects Section -->
   <div class="projects container">
+    <div class="vortex"></div>
     <h2 class="text-center mb-5" style="color: #00ffcc;">Our Projects</h2>
     <div class="row row-cols-1 row-cols-md-2 g-4">
       <!-- Ethos Metrics -->
@@ -134,29 +192,21 @@
           <p class="project-desc">
             A motivation app powered by AI to help users set and achieve their goals, combining research-backed strategies with personalization.
           </p>
-          <a href="https://evolve-c6cfa.web.app/" class="btn btn-outline-light mt-3" target="_blank" aria-label="Try Evolve now">Try it now!</a>
+          <a href="https://evolve-c6cfa.web.app/" class="btn btn-outline-light mt-3" target="_blank" rel="noopener noreferrer" aria-label="Try Evolve now">Try it now!</a>
         </div>
       </div>
 
       <!-- Irish ED Waiting Times -->
       <div class="col">
-  <div class="project-card irish-ed">
-    <h3 class="project-title">Irish Emergency Department Waiting Times</h3>
-    <p class="project-desc">
-      A mobile and web-based app to help users pre-register for emergency department visits and view current waiting times.
-    </p>
-    <a href="https://irish-ed-wait-times.web.app/" 
-       class="btn btn-outline-light mt-3 me-2" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       aria-label="Try Public App">Public App</a>
-    <a href="https://emergencydepartmentlogin.web.app/" 
-       class="btn btn-outline-warning mt-3" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       aria-label="Try Hospital App">Hospital App</a>
-  </div>
-</div>
+        <div class="project-card irish-ed">
+          <h3 class="project-title">Irish Emergency Department Waiting Times</h3>
+          <p class="project-desc">
+            A mobile and web-based app to help users pre-register for emergency department visits and view current waiting times.
+          </p>
+          <a href="https://irish-ed-wait-times.web.app/" class="btn btn-outline-light mt-3 me-2" target="_blank" rel="noopener noreferrer" aria-label="Try Public App">Public App</a>
+          <a href="https://emergencydepartmentlogin.web.app/" class="btn btn-outline-warning mt-3" target="_blank" rel="noopener noreferrer" aria-label="Try Hospital App">Hospital App</a>
+        </div>
+      </div>
 
       <!-- Mission Deck -->
       <div class="col">
@@ -165,7 +215,7 @@
           <p class="project-desc">
             A platform to help users strategize and accomplish complex goals and missions.
           </p>
-          <a href="https://mission-deck.web.app/" class="btn btn-outline-light mt-3" target="_blank" aria-label="Learn more about Mission Deck">Learn More</a>
+          <a href="https://mission-deck.web.app/" class="btn btn-outline-light mt-3" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Mission Deck">Learn More</a>
         </div>
       </div>
     </div>
@@ -177,5 +227,11 @@
     <p>Built with love and purpose to inspire change.</p>
   </div>
 
+  <!-- AOS Library -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
